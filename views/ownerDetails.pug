@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1= title
+  h3 Team: 
+    a(href=owner.team.url) #{owner.team.teamName}
+  h3 Net Worth: #{owner.netWorth}

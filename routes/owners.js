@@ -11,4 +11,9 @@ router.get('/', asyncHandler(async (req, res, next) => {
   res.render("ownerList", {title: "Owners List", ownerList});
 }));
 
+router.get('/:id', asyncHandler(async (req, res, next) => {
+  const owner = await Owner.findById(req.params.id).populate("team");
+  res.render("ownerDetails", {title: owner.fullName, owner})
+}));
+
 module.exports = router;

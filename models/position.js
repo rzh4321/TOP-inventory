@@ -12,5 +12,6 @@ positionSchema.virtual("url").get(function () {
   return `/positions/${this._id}`;
 });
 
+
 // Export model
 module.exports = mongoose.model("Position", positionSchema);

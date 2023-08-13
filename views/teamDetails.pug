@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    h1= title
+    h3 Location: #{team.location} 
+    h3 Owners: 
+    ul
+        each owner in owners
+            if owner.team._id.toString() === team._id.toString()
+                li 
+                    a(href=owner.url) #{owner.fullName}
+    h3 Championships: 
+    if team.championships.length > 0
+        ul
+            each champ in team.championships 
+                li #{champ}
+    else
+        p None
+    h3 Roster:
+    ul
+        each player in players 
+            if player.team._id.toString() === team._id.toString()
+                li
+                    a(href=player.url) #{player.fullName}
+                    |   (#{player.position.position})

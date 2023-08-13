@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title
+  h3 Team: 
+    a(href=player.team.url) #{player.team.teamName}
+  h3 Position: 
+    a(href=player.position.url) #{player.position.position}
+  h3 Number: #{player.number}
