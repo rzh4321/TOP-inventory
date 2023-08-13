@@ -3,11 +3,16 @@ extends layout
 block content
     h1= title
     h3 Players: 
+    - let match = false;
     ul
         each player in players 
             if player.position._id.toString() === position._id.toString()
+                - match = true
                 li
                     a(href=player.url) #{player.fullName}
                     |   (#{player.team.teamName})
+
+    if !match
+        p None
 
     
