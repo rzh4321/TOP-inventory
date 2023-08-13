@@ -2,4 +2,13 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to #[em NBA Database]
+
+  h1 Dynamic Content
+  p The database has the following record counts: 
+
+  ul
+    li #[strong Players:] !{playerCount}
+    li #[strong Teams:] !{teamCount}
+    li #[strong Positions:] !{positionCount}
+    li #[strong Owners:] !{ownerCount}

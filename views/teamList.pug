@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  ul
+    each team in teamList
+        li 
+            a(href=team.url) #{team.teamName}
+    else 
+        li There are no teams
