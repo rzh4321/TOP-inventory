@@ -10,8 +10,7 @@ const teamRouter = require('./routes/teams');
 const positionRouter = require('./routes/positions');
 const ownerRouter = require('./routes/owners');
 
-
-
+require('dotenv').config(); // Load environment variables from .env file
 
 
 var app = express();
@@ -19,8 +18,7 @@ var app = express();
 // Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const dev_db_url = "mongodb+srv://rzh4321:knicks99@cluster0.izfadj3.mongodb.net/inventory?retryWrites=true&w=majority";
-const mongoDB = process.env.MONGODB_URI || dev_db_url;
+const mongoDB = process.env.MONGODB_URL;
 
 main().catch((err) => console.log(err));
 async function main() {
